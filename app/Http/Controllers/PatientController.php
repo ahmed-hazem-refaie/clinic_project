@@ -16,8 +16,8 @@ class PatientController extends Controller
      */
     public function index()
     {
-        $data  =Patient::all();
-        dd($data);
+        $data = Clinic::all()->pluck('name','id') ; 
+        return view('admin.patient',['clinics'=>$data])   ;
     }
 
     /**
