@@ -200,6 +200,7 @@ $('document').ready(function(){
              console.log(data);
              if (data.status==false) {
               showmodalerror(data.errors)
+              return
              }
   
              if (data.status) {
