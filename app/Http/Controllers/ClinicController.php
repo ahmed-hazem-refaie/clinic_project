@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\OrderResource;
 use App\Models\Clinic;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -103,7 +104,12 @@ class ClinicController extends Controller
      */
     public function show(Clinic $clinic)
     {
-        //
+        // dd($clinic);
+        $data = OrderResource::collection( $clinic->orders);
+$data =  $data->toArray($clinic->orders);
+        
+        return view('admin.showclinic',['clinic'=>$clinic,'orders'=>$data]);
+        
     }
 
     /**

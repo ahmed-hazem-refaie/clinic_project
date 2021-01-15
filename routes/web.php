@@ -3,6 +3,7 @@
 use App\Http\Controllers\ClinicController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PatientController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,8 +22,9 @@ use Illuminate\Support\Facades\Route;
 // });
 
 
+
 Route::get('/', function () {
-    return view('home');    });
+    return view('home');    })->middleware('auth');
     
 Route::group(['prefix' => 'admin','middleware' => 'auth'], function () {
 
@@ -48,4 +50,14 @@ Route::get('/', function () {
     
 Auth::routes();
 
+
+
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+Route::get('logout', function () {
+    // dd('ddd');
+    Auth::logout();
+    return redirect('/login');
+});

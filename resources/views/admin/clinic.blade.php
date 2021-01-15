@@ -63,7 +63,10 @@ $(function() {
 
 
 <br />
+        <button type="button" name="create_record" id="create_record" class="btn  create btn-success btn-sm">Create Employee</button>
 
+        <br />
+        <br />
 <br />
 <div class="" style="overflow: auto">
     <table id="user_table" class="table table-dark" style="width: 100%">

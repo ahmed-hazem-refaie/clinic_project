@@ -23,6 +23,7 @@ class OrderResource extends JsonResource
             'start_time' => $this->start_time,
             'end_time' => $this->end_time,
             'clinic' => $this->clinic->name,
+            'clinic_id' => $this->clinic_id,
             'status'=> $this->knowstatus( $this->status)
         ];
     }

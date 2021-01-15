@@ -19,7 +19,7 @@
     <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css" />
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-///
+
 
 
 
@@ -48,7 +48,7 @@
 
 <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.5/js/buttons.print.min.js"></script>
 
-////
+
     <style>
         body{
             background: linear-gradient(to left , rgba(0,0,0,0.7 ),rgba(0,0,0,.7) ) ,
@@ -180,9 +180,11 @@
 <nav>
     <div>
         <p class="head">Clinic System</p>
-        <button type="button" name="create_record" id="create_record" class="btn  create btn-primary btn-sm"><i class="fa fa-home" aria-hidden="true"></i></button>
-        <a class="dropdown-item" href="{{ route('logout') }}"
-        onclick="event.preventDefault();
+    <a href="{{route('home')}}" type="button" name="" id="create_record" class="btn  create btn-primary btn-sm"><i class="fa fa-home" aria-hidden="true"></i></a>
+
+        {{-- <button type="button" name="create_record" id="create_record" class="btn  create btn-primary btn-sm"><i class="fa fa-home" aria-hidden="true"></i></button> --}}
+        <a class="dropdown-item" href="/logout"
+        onclicks="event.preventDefault();
                       document.getElementById('logout-form').submit();">
          {{ __('Logout') }}
      </a>

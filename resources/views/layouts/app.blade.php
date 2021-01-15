@@ -73,9 +73,10 @@
 <nav>
     <div>
         <p class="head">Clinic Management System</p>
-        <button type="button" name="create_record" id="create_record" class="btn  create btn-success btn-sm">Create Employee</button>
-        <a class="dropdown-item" href="{{ route('logout') }}"
-        onclick="event.preventDefault();
+        <a href="{{route('home')}}" type="button" name="" id="create_record" class="btn  create btn-primary btn-sm"><i class="fa fa-home" aria-hidden="true"></i></a>
+
+        <a class="dropdown-item" href="/logout"
+        onclicks="event.preventDefault();
                       document.getElementById('logout-form').submit();">
          {{ __('Logout') }}
      </a>

@@ -68,7 +68,10 @@ class OrderController extends Controller
 
             ->addColumn('action', function($row){
   
-                $btn = '<a href="javascript:void(0)" class="edit btn btn-primary btn-sm">View</a>';
+                $clinic_route  = route('clinic.show',$row['clinic_id']);
+                $clinic_name  = $row['clinic'];
+                
+                $btn = "<a href='$clinic_route' class='edit btn btn-primary btn-sm'> View  Clinic $clinic_name  Info </a>";
 
                  return $btn;
          })
