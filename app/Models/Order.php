@@ -21,12 +21,12 @@ class Order extends Model
        public function patient()
        {
         //    return $this->hasMany('App\ProjectImage','project_id');
-        return $this->hasOne(Patient::class);
+        return $this->hasOne(Patient::class,'id','patient_id');
 
        }
    
        public function clinic()
        {
-           return $this->hasOne(Clinic::class);
+           return $this->hasOne(Clinic::class,'id','clinic_id');
        }
 }

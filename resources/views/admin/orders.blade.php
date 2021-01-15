@@ -3,7 +3,9 @@
 
 
 @section('adminbase')
-    
+
+ 
+
 
     <h1>Custom filter/Search with Laravel Datatables Example</h1>
    
@@ -34,9 +36,14 @@
     <table class="table table-bordered data-table">
         <thead>
             <tr>
-                <th>No</th>
-                <th>Name</th>
-                <th>Email</th>
+                <th>Data</th>
+                <th>Patient Name</th>
+                <th>PAtient No</th>
+                <th>Clinic</th>
+                <th>From</th>
+                <th> To</th>
+                <th>Status</th>
+
                 <th width="100px">Action</th>
             </tr>
         </thead>
@@ -46,10 +53,16 @@
   
 </body>
   
+
+
 <script type="text/javascript">
   $(function () {
    
     var table = $('.data-table').DataTable({
+        dom: 'Bfrtip',
+      buttons: [
+        'copy', 'csv', 'excel', 'pdf', 'print'
+      ],
         processing: true,
         serverSide: true,
         ajax: {
@@ -66,11 +79,27 @@
         //     }
         },
         columns: [
-            {data: 'patient_id', name: 'DT_RowIndex'},
-            {data: 'clinic_id', name: 'name'},
-            {data: 'comment', name: 'email'},
-            {data: 'created_at', name: 'action', orderable: false, searchable: false},
-        ]
+            {data: 'date'},
+            {data: 'patient_name', name: 'name'},
+            {data: 'patient_no', name: 'patient_no'},
+            {data: 'clinic'},
+            {data: 'start_time'},
+            {data: 'end_time'},
+            {data: 'status'},
+
+            {data: 'action', name: 'action', orderable: false, searchable: false},
+        ],
+        
+        // 'patient_name'=> $this->patient->name,
+        //     'patient_no' => $this->patient->patient_no,
+        //     'date'=>$this->date,
+        //     'created_at' => (string) $this->created_at,
+        //     'updated_at' => (string) $this->updated_at,
+        //     'start_time' => $this->start_time,
+        //     'end_time' => $this->end_time,
+        //     'clinic' => $this->clini->name,
+        //     'status'=>$this->status
+        
     });
    
     $(".updatesearch").on('change',function(){
